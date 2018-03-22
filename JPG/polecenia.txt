@@ -8,3 +8,23 @@ pobierz http://test.odpn.pl/ODPN/Szkoly/WydrukObliczonychDotacji/WydrukObliczony
 pobierz http://test.odpn.pl/ODPN/Szkoly/WydrukObliczonychDotacji/WydrukObliczonychDotacji_Resp.aspx?volt_sp_key=fa917590e839db3c508112e09e985893&task=PobierzWydruk&szk_id=1145&rok=2017&miesiac=7
 pobierz http://test.odpn.pl/ODPN/Szkoly/WydrukObliczonychDotacji/WydrukObliczonychDotacji_Resp.aspx?volt_sp_key=fa917590e839db3c508112e09e985893&task=PobierzWydruk&szk_id=1145&rok=2017&miesiac=7
 zakoncz
+zaloguj 
+pobierz http://test.odpn.pl/Moduly/Wydruki/PodgladWydruku.aspx?volt_sp_key=ce3add2fca49cabf675fc1d845dce73c&task=PobierzWydruk&miesiac=8&rok=2017&szk_id=1199
+printscreen http://test.odpn.pl/Common/Historia/Historia.aspx
+pobierz http://test.odpn.pl//ODPN/Miasto/Wydruki/WydrukiFormatki/DotacjePrzekazaneWMiesiacu/DotacjePrzekazaneWMiesiacu.ashx?rok=2017&miesiac=9&rozdzial=-1&nrZadania=-1&paragrafPubliczneNiepubliczne=-1&rozdzialCheckbox=true&nrZadaniaCheckbox=false&pokazKierunekKsztalcenia=false&aderesWOsobnejKOlumnie=false&typPlacowki=-1&szkoly=
+pobierz http://test.odpn.pl/Moduly/Wydruki/PodgladWydruku.aspx?volt_sp_key=c20e49f32f20249c863409c72adc0111&task=PobierzWydruk&miesiac=6&rok=2017&szk_id=1145
+pobierz http://test.odpn.pl/ODPN/Szkoly/WydrukObliczonychDotacji/WydrukObliczonychDotacji_Resp.aspx?volt_sp_key=fa917590e839db3c508112e09e985893&task=PobierzWydruk&szk_id=1145&rok=2017&miesiac=7
+pobierz http://test.odpn.pl/ODPN/Szkoly/WydrukObliczonychDotacji/WydrukObliczonychDotacji_Resp.aspx?volt_sp_key=fa917590e839db3c508112e09e985893&task=PobierzWydruk&szk_id=1145&rok=2017&miesiac=7
+pobierz http://test.odpn.pl/ODPN/Szkoly/WydrukObliczonychDotacji/WydrukObliczonychDotacji_Resp.aspx?volt_sp_key=fa917590e839db3c508112e09e985893&task=PobierzWydruk&szk_id=1145&rok=2017&miesiac=7
+pobierz http://test.odpn.pl/ODPN/Szkoly/WydrukObliczonychDotacji/WydrukObliczonychDotacji_Resp.aspx?volt_sp_key=fa917590e839db3c508112e09e985893&task=PobierzWydruk&szk_id=1145&rok=2017&miesiac=7
+zakoncz
+zaloguj 
+pobierz http://test.odpn.pl/Moduly/Wydruki/PodgladWydruku.aspx?volt_sp_key=ce3add2fca49cabf675fc1d845dce73c&task=PobierzWydruk&miesiac=8&rok=2017&szk_id=1199
+printscreen http://test.odpn.pl/Common/Historia/Historia.aspx
+pobierz http://test.odpn.pl//ODPN/Miasto/Wydruki/WydrukiFormatki/DotacjePrzekazaneWMiesiacu/DotacjePrzekazaneWMiesiacu.ashx?rok=2017&miesiac=9&rozdzial=-1&nrZadania=-1&paragrafPubliczneNiepubliczne=-1&rozdzialCheckbox=true&nrZadaniaCheckbox=false&pokazKierunekKsztalcenia=false&aderesWOsobnejKOlumnie=false&typPlacowki=-1&szkoly=
+pobierz http://test.odpn.pl/Moduly/Wydruki/PodgladWydruku.aspx?volt_sp_key=c20e49f32f20249c863409c72adc0111&task=PobierzWydruk&miesiac=6&rok=2017&szk_id=1145
+pobierz http://test.odpn.pl/ODPN/Szkoly/WydrukObliczonychDotacji/WydrukObliczonychDotacji_Resp.aspx?volt_sp_key=fa917590e839db3c508112e09e985893&task=PobierzWydruk&szk_id=1145&rok=2017&miesiac=7
+pobierz http://test.odpn.pl/ODPN/Szkoly/WydrukObliczonychDotacji/WydrukObliczonychDotacji_Resp.aspx?volt_sp_key=fa917590e839db3c508112e09e985893&task=PobierzWydruk&szk_id=1145&rok=2017&miesiac=7
+pobierz http://test.odpn.pl/ODPN/Szkoly/WydrukObliczonychDotacji/WydrukObliczonychDotacji_Resp.aspx?volt_sp_key=fa917590e839db3c508112e09e985893&task=PobierzWydruk&szk_id=1145&rok=2017&miesiac=7
+pobierz http://test.odpn.pl/ODPN/Szkoly/WydrukObliczonychDotacji/WydrukObliczonychDotacji_Resp.aspx?volt_sp_key=fa917590e839db3c508112e09e985893&task=PobierzWydruk&szk_id=1145&rok=2017&miesiac=7
+zakoncz
