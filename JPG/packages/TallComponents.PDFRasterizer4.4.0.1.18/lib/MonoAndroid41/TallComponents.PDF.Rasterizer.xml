@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TallComponents.PDF.Rasterizer</name>
+    </assembly>
+    <members>
+        <member name="T:TallComponents.PDF.Rasterizer.Page">
+            <summary>
+            A PDF page.
+            </summary>
+        </member>
+        <member name="M:TallComponents.PDF.Rasterizer.Page.#ctor(TallComponents.PDF.Base.DocumentStructure.Page,TallComponents.PDF.Graphics.LayerCollection)">
+            <summary>
+            Create a PDF page.
+            </summary>
+            <param name="stream">The stream that holds the PDF document.</param>
+            <param name="index">Zero-based index of the PDF page.</param>
+        </member>
+        <member name="M:TallComponents.PDF.Rasterizer.Page.Draw(Android.Graphics.Canvas,System.Single)">
+            <summary>
+            Draw this PDF page to an Android Canvas.
+            </summary>
+            <param name="clientNativeCanvas">Draw to this Canvas</param>
+        </member>
+        <member name="M:TallComponents.PDF.Rasterizer.Page.SaveAsBitmap(System.IO.Stream,Android.Graphics.Bitmap.CompressFormat,System.Single)">
+            <summary>
+            Save this PDF page as a bitmap.
+            </summary>
+            <param name="stream">Save to this stream.</param>
+            <param name="format">The file format of the bitmap (bmp, png, jpeg, etc.)</param>
+            <param name="resolution">The horizontal and vertical resolution of the bitmap in DPI.</param>
+        </member>
+        <member name="P:TallComponents.PDF.Rasterizer.Page.Width">
+            <summary>
+            The width of the page in points as it appears in the viewer. This means that any crop box or rotate have been taken into account.
+            </summary>        
+        </member>
+        <member name="P:TallComponents.PDF.Rasterizer.Page.Height">
+            <summary>
+            The height of the page in points as it appears in the viewer. This means that any crop box or rotate have been taken into account.
+            </summary>
+        </member>
+        <member name="T:TallComponents.PDF.Rasterizer.Layer">
+            <summary>
+            A PDF layer represents a part of the graphics on a PDF page that can be made visible or invisible.
+            </summary>
+        </member>
+        <member name="P:TallComponents.PDF.Rasterizer.Layer.Name">
+            <summary>
+            The name of this layer.
+            </summary>
+        </member>
+        <member name="P:TallComponents.PDF.Rasterizer.Layer.Visible">
+            <summary>
+            Whether the graphics on a PDF page that is associated with this layer is visble.
+            </summary>
+            <remarks>
+            By default this boolean is set the the default specified in the PDF document.
+            </remarks>
+        </member>
+        <member name="P:TallComponents.PDF.Rasterizer.PageCollection.Count">
+            <summary>
+            Get the number of <see cref="T:TallComponents.PDF.Rasterizer.Page">Page</see>s.
+            </summary>
+        </member>
+        <member name="M:TallComponents.PDF.Rasterizer.PageCollection.GetEnumerator">
+            <summary>
+            Implements strong typed IEnumerable&lt;T&gt;.GetEnumerator.
+            </summary>
+            <returns>Enumerator for this collection.</returns>
+        </member>
+        <member name="M:TallComponents.PDF.Rasterizer.PageCollection.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Implements IEnumerable.GetEnumerator.
+            </summary>
+            <returns>Enumerator for this collection.</returns>
+        </member>
+        <member name="P:TallComponents.PDF.Rasterizer.LayerCollection.Count">
+            <summary>
+            Get the number of <see cref="T:TallComponents.PDF.Rasterizer.Layer">Layer</see>s actually contained in the <see cref="T:TallComponents.PDF.Rasterizer.LayerCollection">LayerCollection</see>
+            </summary>
+        </member>
+        <member name="M:TallComponents.PDF.Rasterizer.LayerCollection.GetEnumerator">
+            <summary>
+            Implements strong typed IEnumerable&lt;T&gt;.GetEnumerator.
+            </summary>
+            <returns>Enumerator for this collection.</returns>
+        </member>
+        <member name="M:TallComponents.PDF.Rasterizer.LayerCollection.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Implements IEnumerable.GetEnumerator.
+            </summary>
+            <returns>Enumerator for this collection.</returns>
+        </member>
+    </members>
+</doc>

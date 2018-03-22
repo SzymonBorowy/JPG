@@ -1,0 +1,5 @@
+APlikacja stworzona dla 96Volt na praktykach (system ODPN)
+Funkcjonalnoœci:
+1. Automatyczne logowanie siê do systemu, pobieranie wybranych plików, robienie ScreenShot-ów, zapisywanie w wybranym miejscu na dysku.
+2. Wykonywanie poleceñ z pliku tekstowego.
+3. Porównywanie z zpiowanych folderów. G³ówna funkcja aplikacji, s³u¿y do pokazywania b³êdów (ró¿nic) miêdzy wersjami w wygenerowanych wydrukach/plikach. W folderach znajdowa³y siê pliki w formacie .pdf .docx .xlsx, aplikacja mia³a je rozpakowaæ, przekonwertowaæ do plików o rozszerzeniu .jpg, porównaæ odpowiadaj¹ce sobie pliki, zaznaczyæ ewentualne ró¿nice i wygenerowaæ nowy plik zawieraj¹cy ró¿nice.

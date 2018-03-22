@@ -1,0 +1,91 @@
+C:\Users\VOLTPC3\documents\visual studio 2015\Projects\JPG\JPG\bin\Debug\JPG.exe
+C:\Users\VOLTPC3\documents\visual studio 2015\Projects\JPG\JPG\bin\Debug\Spire.Pdf.dll
+C:\Users\VOLTPC3\documents\visual studio 2015\Projects\JPG\JPG\bin\Debug\WebDriver.dll
+C:\Users\VOLTPC3\documents\visual studio 2015\Projects\JPG\JPG\bin\Debug\Spire.License.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\obj\Debug\JPG.csprojResolveAssemblyReference.cache
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\obj\Debug\JPG.PolecenieForm.resources
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\obj\Debug\JPG.PorownanieForm.resources
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\obj\Debug\JPG.StartForm.resources
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\obj\Debug\JPG.Properties.Resources.resources
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\obj\Debug\JPG.csproj.GenerateResource.Cache
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\KonwertujPlikiDoJPG.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\PorownajJPG.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\PorownajZIPy.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Syncfusion.Compression.Base.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Syncfusion.Core.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Syncfusion.DLS.Base.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Syncfusion.DocIO.Web.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Syncfusion.ExcelToPDFConverter.Base.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Syncfusion.Pdf.Base.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Syncfusion.Shared.Base.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Syncfusion.Shared.Web.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Syncfusion.XlsIO.Web.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Spire.Doc.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Syncfusion.XlsIO.Base.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Microsoft.mshtml.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\KonwertujPlikiDoJPG.pdb
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\PorownajJPG.pdb
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\PorownajZIPy.pdb
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Syncfusion.Compression.Base.xml
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Syncfusion.DLS.Base.xml
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Syncfusion.DocIO.Web.xml
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Syncfusion.ExcelToPDFConverter.Base.xml
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Syncfusion.Pdf.Base.xml
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Syncfusion.Shared.Base.xml
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Syncfusion.Shared.Web.xml
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Syncfusion.XlsIO.Web.xml
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Spire.Pdf.xml
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Spire.Doc.xml
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Syncfusion.XlsIO.Base.xml
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\Spire.License.xml
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\obj\Debug\JPG.exe
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\obj\Debug\JPG.pdb
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\InterpretacjaTekstu.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\ZalogujIPobierz.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\InterpretacjaTekstu.pdb
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\ZalogujIPobierz.pdb
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\WebDriver.xml
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\JPG.exe.config
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\JPG\bin\Debug\JPG.pdb
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\JPG.exe.config
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\JPG.exe
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\JPG.pdb
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\InterpretacjaTekstu.dll
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\KonwertujPlikiDoJPG.dll
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\PorownajJPG.dll
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\PorownajZIPy.dll
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\ZalogujIPobierz.dll
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\Spire.Pdf.dll
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\Spire.Doc.dll
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\Syncfusion.XlsIO.Base.dll
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\WebDriver.dll
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\Spire.License.dll
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\Microsoft.mshtml.dll
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\InterpretacjaTekstu.pdb
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\KonwertujPlikiDoJPG.pdb
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\KonwertujPlikiDoJPG.dll.config
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\PorownajJPG.pdb
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\PorownajZIPy.pdb
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\Syncfusion.Compression.Base.xml
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\Syncfusion.DLS.Base.xml
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\Syncfusion.DocIO.Web.xml
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\Syncfusion.ExcelToPDFConverter.Base.xml
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\Syncfusion.Pdf.Base.xml
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\Syncfusion.Shared.Base.xml
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\Syncfusion.Shared.Web.xml
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\Syncfusion.XlsIO.Web.xml
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\ZalogujIPobierz.pdb
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\Spire.Pdf.xml
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\Spire.Doc.xml
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\Syncfusion.XlsIO.Base.xml
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\WebDriver.xml
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\bin\Debug\Spire.License.xml
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\obj\Debug\JPG.csprojResolveAssemblyReference.cache
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\obj\Debug\JPG.PolecenieForm.resources
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\obj\Debug\JPG.PorownanieForm.resources
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\obj\Debug\JPG.StartForm.resources
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\obj\Debug\JPG.Properties.Resources.resources
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\obj\Debug\JPG.csproj.GenerateResource.Cache
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\obj\Debug\JPG.csproj.CoreCompileInputs.cache
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\obj\Debug\JPG.exe
+D:\WAKACJE 2017 - praca\Projects\JPG\JPG\JPG\obj\Debug\JPG.pdb

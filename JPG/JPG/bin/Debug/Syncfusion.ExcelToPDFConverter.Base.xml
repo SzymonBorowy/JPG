@@ -1,0 +1,2073 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.ExcelToPdfConverter.Base</name>
+    </assembly>
+    <members>
+        <member name="M:Syncfusion.ExcelToPdfConverter.CurrentProgressChangedEventArgs.#ctor(System.Int32,System.Int32,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.ExcelToPdfConverter.CurrentProgressChangedEventArgs"/> class.
+            </summary>
+            <param name="noOfSheets">The no of sheets.</param>
+            <param name="activeSheetIndex">Index of the active sheet.</param>
+            <param name="source">The source.</param>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.CurrentProgressChangedEventArgs.CurrentProgressChanged">
+            <summary>
+            Gets or sets the current progress changed.
+            </summary>
+            <value>The current progress changed.</value>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.SheetBeforeDrawnEventArgs.#ctor(System.Int32,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.ExcelToPdfConverter.SheetBeforeDrawnEventArgs"/> class.
+            </summary>
+            <param name="currentSheet">The current sheet.</param>
+            <param name="source">The source.</param>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.SheetBeforeDrawnEventArgs.CurrentSheet">
+            <summary>
+            Gets or sets the current sheet.
+            </summary>
+            <value>The current sheet.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.SheetBeforeDrawnEventArgs.Skip">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Syncfusion.ExcelToPdfConverter.SheetBeforeDrawnEventArgs"/> is skip.
+            </summary>
+            <value><c>true</c> if skip; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.SheetAfterDrawnEventArgs.#ctor(System.Int32,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.ExcelToPdfConverter.SheetAfterDrawnEventArgs"/> class.
+            </summary>
+            <param name="afterSheet">The after sheet.</param>
+            <param name="source">The source.</param>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.SheetAfterDrawnEventArgs.AfterSheet">
+            <summary>
+            Gets the after sheet.
+            </summary>
+            <value>The after sheet.</value>
+        </member>
+        <member name="T:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter">
+            <summary>
+            This class provides functions for the conversion of Excel documents to the Pdf documents.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.conditionalFormatApplier">
+            <summary>
+            Represents the object of Excel sheet conditional formatting .
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.pdfDocument">
+            <summary>
+            Indicates the object of the pdf document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.currentPage">
+            <summary>
+            Indicates the current rendering pdf page in the document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.workBook">
+            <summary>
+            Indicates the active workbook of the input document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.workSheet">
+            <summary>
+            Indicates the active worksheet of the workbook.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.workBookImpl">
+            <summary>
+            Indicates the object of the workbook Implementation class.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.unitConverter">
+            <summary>
+            This object is used for the conversion between the units.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.excelToPdfSettings">
+            <summary>
+            Indicates the object of the Excel to pdf converter settings object.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.pdfPageTemplate">
+            <summary>
+            Indicates the object of the pdf template in which the document is drawn first.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.pdfGraphics">
+            <summary>
+            Indicates the object of the pdf graphics of the current pdf page.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.excelEngine">
+            <summary>
+            Indicates the object of the excel engine.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.pdfSection">
+            <summary>
+            Indicates the object of the current Pdf section.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.pdfTemplateCollection">
+            <summary>
+            Represents the collection of Pdf templates.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.predefinedHeaderFooter">
+            <summary>
+            Represents the collection of Header and Footer representations and their respecive values.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.tableBorderColorList">
+            <summary>
+            Represents the collection of table style border color list.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.fontTableColors">
+            <summary>
+            Represents the collection of the table style font list.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.headerFooter">
+            <summary>
+            Represents the collection of the header and footer objects.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.borderWidth">
+            <summary>
+            Indicates the Excelborder index width.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.pageCount">
+            <summary>
+            Indicates the no of page counts in the Pdf/
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.bookmark">
+            <summary>
+            Indicates the Bookmark for the Pdf page.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.scaledPageWidth">
+            <summary>
+            Indicates the scaled page width to which the template should be drawn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.scaledPageHeight">
+            <summary>
+            Indicates the scaled page height to which the template should be drawn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.scaledPageHFWidth">
+            <summary>
+            Indicates the scaled page width to which the template should be drawn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.scaledPageHFHeight">
+            <summary>
+            Indicates the scaled page height to which the template should be drawn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.fontList">
+            <summary>
+            Indicates the list of the fonts collections to which the fonts are need to substituted.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.tableStyle">
+            <summary>
+            Indicates the object of the Table style.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.cellDisplayText">
+            <summary>
+            Indicates the wrapped cell display text for a rotated text.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.#ctor(Syncfusion.XlsIO.IWorkbook)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter"/> class.
+            </summary>
+            <param name="workbook">The workbook.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.#ctor(Syncfusion.XlsIO.IWorksheet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter"/> class.
+            </summary>
+            <param name="worksheet">The worksheet.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter"/> class.
+            </summary>
+            <param name="filePath">The file path.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter"/> class.
+            </summary>
+            <param name="stream">The stream.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetLayoutOptions(Syncfusion.XlsIO.Implementation.PageSetupBaseImpl)" -->
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.Convert">
+            <summary>
+            Converts this instance.
+            </summary>
+            <returns>pdfDocument Object</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.Convert(Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings)">
+            <summary>
+            Converts the document with the specified converter settings.
+            </summary>
+            <param name="converterSettings">The converter settings.</param>
+            <returns>pdfdcoument object</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.OnProgressChanged(System.Int32,System.Int32)">
+            <summary>
+            Called when [progress changed].
+            </summary>
+            <param name="noOfSheets">The no of sheets.</param>
+            <param name="activeSheetIndex">Index of the active sheet.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.OnSheetBeforeDrawn(Syncfusion.ExcelToPdfConverter.SheetBeforeDrawnEventArgs)">
+            <summary>
+            Raises the <see cref="E:SheetBeforeDrawn"/> event.
+            </summary>
+            <param name="args">The <see cref="T:Syncfusion.ExcelToPdfConverter.SheetBeforeDrawnEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.OnSheetAfterDrawn(System.Int32)">
+            <summary>
+            Called when [sheet after drawn].
+            </summary>
+            <param name="activeSheetIndex">Index of the active sheet.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.RaiseSheetBeforeDrawn(System.Int32)">
+            <summary>
+            Raises the sheet before drawn.
+            </summary>
+            <param name="activeSheetIndex">Index of the active sheet.</param>
+            <returns>the boolean values</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawSheet(Syncfusion.XlsIO.IWorksheet,Syncfusion.XlsIO.IRange[])">
+            <summary>
+            Draws the sheet.
+            </summary>
+            <param name="wkSheet">The work sheet.</param>
+            <returns>pdfdocument object</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawSplitText">
+            <summary>
+            Draws the split text.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawSplitText(Syncfusion.ExcelToPdfConverter.SplitText)">
+            <summary>
+            Draws the split text.
+            </summary>
+            <param name="splitText">The split text.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawBackgroundImage(Syncfusion.XlsIO.Implementation.WorksheetImpl,System.Drawing.SizeF,Syncfusion.Pdf.PdfPage)">
+            <summary>
+            Draws the back ground image of Excel sheet.
+            </summary>
+            <param name="sheet">The sheet.</param>
+            <param name="templateSize">Size of the template.</param>
+            <param name="page">The pdf page.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawPdfPageHeaderFooter(Syncfusion.Pdf.PdfSection,System.Collections.Generic.List{Syncfusion.ExcelToPdfConverter.HeaderFooter},Syncfusion.XlsIO.IWorksheet,System.Single,System.Single,Syncfusion.Pdf.PdfPage,System.Single@,System.Single@)">
+            <summary>
+            Draws the Header and Footer to the PDF page .
+            </summary>
+            <param name="section">The Pdf section.</param>
+            <param name="headerFooterCollection">The header footer collection.</param>
+            <param name="sheet">The Worksheet.</param>
+            <param name="page">The Pdf page.</param>
+            <param name="headerHeight">Height of the header.</param>
+            <param name="footerHeight">Height of the footer.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawRow(Syncfusion.XlsIO.IWorksheet,System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Single,System.Single)">
+            <summary>
+            Draws the row.
+            </summary>
+            <param name="wkSheet">The wk sheet.</param>
+            <param name="startColumn">The start column.</param>
+            <param name="endColumn">The end column.</param>
+            <param name="startRow">The start row.</param>
+            <param name="endRow">The end row.</param>
+            <param name="xValue">The x value.</param>
+            <param name="yValue">The y value.</param>
+            <param name="rowHeightGetter">The row height getter.</param>
+            <param name="columnWidthGetter">The column width getter.</param>
+            <param name="originalWidth">Width of the original.</param>
+            <returns>The Object of Pdf Document.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawShape(Syncfusion.XlsIO.Implementation.WorksheetImpl,Syncfusion.Pdf.Graphics.PdfGraphics,System.Single,System.Single)">
+            <summary>
+            Draws the shape.
+            </summary>
+            <param name="sheet">The sheet.</param>
+            <param name="graphics">The graphics.</param>
+            <param name="positionX">The position X.</param>
+            <param name="positionY">The position Y.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawHeadersAndFooters(Syncfusion.Pdf.PdfSection,Syncfusion.XlsIO.Implementation.WorksheetImpl)">
+            <summary>
+            Draws the headers and footers.
+            </summary>
+            <param name="pdfSection">The PDF section.</param>
+            <param name="sheetImpl">The sheet impl.</param>
+            <returns>The collection of the header and footer objects.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawLines(Syncfusion.XlsIO.Implementation.WorksheetImpl,System.Int32,System.Int32,System.Int32,System.Int32,Syncfusion.Pdf.Graphics.PdfGraphics,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Draws the lines.
+            </summary>
+            <param name="sheet">The sheet.</param>
+            <param name="firstRow">The first row.</param>
+            <param name="firstColumn">The first column.</param>
+            <param name="lastRow">The last row.</param>
+            <param name="lastColumn">The last column.</param>
+            <param name="graphics">The graphics.</param>
+            <param name="rowHeightGetter">The row height getter.</param>
+            <param name="columnWidthGetter">The column width getter.</param>
+            <param name="width">The width.</param>
+            <param name="height">The height.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.IterateMerges(Syncfusion.XlsIO.Implementation.WorksheetImpl,System.Int32,System.Int32,System.Int32,System.Int32,Syncfusion.Pdf.Graphics.PdfGraphics,Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.MergeMethod,System.Single,System.Single,System.Single)">
+            <summary>
+            Iterates the merges.
+            </summary>
+            <param name="sheet">The sheet.</param>
+            <param name="firstRow">The first row.</param>
+            <param name="firstColumn">The first column.</param>
+            <param name="lastRow">The last row.</param>
+            <param name="lastColumn">The last column.</param>
+            <param name="graphics">The graphics.</param>
+            <param name="rowHeightGetter">The row height getter.</param>
+            <param name="columnWidthGetter">The column width getter.</param>
+            <param name="method">The method.</param>
+            <param name="originalWidth">Width of the i original.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawMerge(Syncfusion.XlsIO.Implementation.WorksheetImpl,Syncfusion.XlsIO.Parser.Biff_Records.MergeCellsRecord.MergedRegion,System.Int32,System.Int32,System.Int32,System.Int32,Syncfusion.Pdf.Graphics.PdfGraphics,System.Single,System.Single,System.Single)">
+            <summary>
+            Draws the merge.
+            </summary>
+            <param name="sheet">The sheet.</param>
+            <param name="mergedRegion">The merged region.</param>
+            <param name="firstRow">The first row.</param>
+            <param name="firstColumn">The first column.</param>
+            <param name="graphics">The graphics.</param>
+            <param name="rowHeightGetter">The row height getter.</param>
+            <param name="columnWidthGetter">The column width getter.</param>
+            <param name="originalWidth">Width of the i original.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawBackGround(Syncfusion.XlsIO.Implementation.WorksheetImpl,System.Int32,System.Int32,System.Int32,System.Int32,Syncfusion.Pdf.Graphics.PdfGraphics,Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.CellMethod,System.Single,System.Single,System.Single)">
+            <summary>
+            Draws the back ground.
+            </summary>
+            <param name="sheet">The sheet.</param>
+            <param name="firstRow">The first row.</param>
+            <param name="firstColumn">The first column.</param>
+            <param name="lastRow">The last row.</param>
+            <param name="lastColumn">The last column.</param>
+            <param name="graphics">The graphics.</param>
+            <param name="rowHeightGetter">The row height getter.</param>
+            <param name="columnWidthGetter">The column width getter.</param>
+            <param name="method">The method.</param>
+            <param name="originalWidth">Width of the i original.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawBackground(Syncfusion.XlsIO.IRange,System.Drawing.RectangleF,Syncfusion.Pdf.Graphics.PdfGraphics)">
+            <summary>
+            Draws the background.
+            </summary>
+            <param name="cell">The cell range.</param>
+            <param name="rectangle">The cell rectangle.</param>
+            <param name="graphics">The pdf page graphics object.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawBackground(Syncfusion.XlsIO.Interfaces.IInternalExtendedFormat,System.Drawing.RectangleF,Syncfusion.Pdf.Graphics.PdfGraphics,Syncfusion.XlsIO.IRange)">
+            <summary>
+            Draws the background.
+            </summary>
+            <param name="internalExtendedFormat">The internal extended format.</param>
+            <param name="rect">The cell rectangle.</param>
+            <param name="graphics">The pdf page graphics.</param>
+            <param name="cell">The cell range.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawMergedBackground(Syncfusion.XlsIO.Implementation.WorksheetImpl,Syncfusion.XlsIO.Parser.Biff_Records.MergeCellsRecord.MergedRegion,System.Int32,System.Int32,System.Int32,System.Int32,Syncfusion.Pdf.Graphics.PdfGraphics,System.Single,System.Single,System.Single)">
+            <summary>
+            Draws the merged background.
+            </summary>
+            <param name="sheet">The sheet.</param>
+            <param name="mergedRegion">The merged region.</param>
+            <param name="firstRow">The first row.</param>
+            <param name="firstColumn">The first column.</param>
+            <param name="graphics">The graphics.</param>
+            <param name="rowHeightGetter">The row height getter.</param>
+            <param name="columnWidthGetter">The column width getter.</param>
+            <param name="originalWidth">Width of the i original.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetMergedWidth(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets the width of the merged cells.
+            </summary>
+            <param name="firstColumn">The first column.</param>
+            <param name="lastColumn">The last column.</param>
+            <param name="mergedFirstColumn">The merged first column.</param>
+            <param name="mergedLastColumn">The merged last column.</param>
+            <param name="columnWidthGetter">The column width getter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawCells(Syncfusion.XlsIO.Implementation.WorksheetImpl,System.Int32,System.Int32,System.Int32,System.Int32,Syncfusion.Pdf.Graphics.PdfGraphics,System.Single,System.Single,System.Single)">
+            <summary>
+            Draws the cells.
+            </summary>
+            <param name="sheet">The sheet.</param>
+            <param name="firstRow">The first row.</param>
+            <param name="firstColumn">The first column.</param>
+            <param name="lastRow">The last row.</param>
+            <param name="lastColumn">The last column.</param>
+            <param name="graphics">The graphics.</param>
+            <param name="rowHeightGetter">The row height getter.</param>
+            <param name="columnWidthGetter">The column width getter.</param>
+            <param name="originalWidth">Width of the i original.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawCell(Syncfusion.XlsIO.Implementation.MigrantRangeImpl,System.Drawing.RectangleF,System.Drawing.RectangleF,Syncfusion.Pdf.Graphics.PdfGraphics)">
+            <summary>
+            Draws the cell.
+            </summary>
+            <param name="cell">The migrant cell range.</param>
+            <param name="cellRect">The cell rectangle.</param>
+            <param name="adjacentRect">The adjacent cell rectangle.</param>
+            <param name="graphics">The pdf page graphics.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawCell(Syncfusion.XlsIO.Implementation.ExtendedFormatImpl,Syncfusion.XlsIO.IRange,System.Drawing.RectangleF,System.Drawing.RectangleF,Syncfusion.Pdf.Graphics.PdfGraphics)">
+            <summary>
+            Draws the cell.
+            </summary>
+            <param name="extendedFormatImpl">The extended format impl.</param>
+            <param name="cell">The cell range.</param>
+            <param name="cellRect">The cell rectangle.</param>
+            <param name="adjacentRect">The adjacent cell rect.</param>
+            <param name="graphics">The pdf page graphics.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawRotatedText(System.Drawing.RectangleF,Syncfusion.XlsIO.Implementation.ExtendedFormatImpl,Syncfusion.XlsIO.IRange,System.String,Syncfusion.Pdf.Graphics.PdfGraphics,Syncfusion.Pdf.Graphics.PdfFont,Syncfusion.Pdf.Graphics.PdfBrush,Syncfusion.Pdf.Graphics.PdfStringFormat,System.Drawing.SizeF,System.Single,System.Drawing.SizeF)">
+            <summary>
+            Draws the rotated text.
+            </summary>
+            <param name="adjacentRect">The adjacent cell rect.</param>
+            <param name="extendedFormatImpl">The extended format impl of the cell.</param>
+            <param name="cell">The cell range.</param>
+            <param name="value">The cell display text.</param>
+            <param name="graphics">The pdf page graphics.</param>
+            <param name="nativeFont">The native font.</param>
+            <param name="brush">The pdf brush.</param>
+            <param name="format">The pdf string format.</param>
+            <param name="firstCharWidth">First char width of the display text .</param>
+            <param name="totalWidth">The total width of the display text.</param>
+            <param name="lastCharSize">Last char size of the display text .</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawBorders(Syncfusion.XlsIO.IBorders,System.Drawing.RectangleF,Syncfusion.Pdf.Graphics.PdfGraphics,Syncfusion.XlsIO.IRange)">
+            <summary>
+            Draws the borders.
+            </summary>
+            <param name="borders">The border collections of the cell.</param>
+            <param name="rect">The rectangle of the cell.</param>
+            <param name="graphics">The pdf page graphics.</param>
+            <param name="cell">The cell range.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawBorder(Syncfusion.XlsIO.IBorders,Syncfusion.XlsIO.IBorder,System.Single,System.Single,System.Single,System.Single,Syncfusion.Pdf.Graphics.PdfGraphics,Syncfusion.XlsIO.IRange,System.Drawing.Color,Syncfusion.XlsIO.ExcelBordersIndex)">
+            <summary>
+            Draws the border.
+            </summary>
+            <param name="borders">The borders collection of the cell.</param>
+            <param name="border">The cell Excel border indez.</param>
+            <param name="x1">The x1 point of the border line.</param>
+            <param name="y1">The y1 point of the border line.</param>
+            <param name="x2">The x2 point of the border line.</param>
+            <param name="y2">The y2 point of the border line.</param>
+            <param name="graphics">The pdf page graphics.</param>
+            <param name="cell">The cell range.</param>
+            <param name="borderColor">Color of the cell border.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawDoubleBorder(Syncfusion.XlsIO.IBorders,Syncfusion.XlsIO.IBorder,System.Single,System.Single,System.Single,System.Single,Syncfusion.Pdf.Graphics.PdfGraphics,Syncfusion.XlsIO.IRange,System.Drawing.Color)">
+            <summary>
+            Draws the double border.
+            </summary>
+            <param name="borders">The borders collection of the cell.</param>
+            <param name="border">The Excel cell border Index.</param>
+            <param name="x1">The x1 point of the border line.</param>
+            <param name="y1">The y1 point of the border line.</param>
+            <param name="x2">The x2 point of the border line.</param>
+            <param name="y2">The y2 point of the border line.</param>
+            <param name="graphics">The pdf page graphics.</param>
+            <param name="cell">The cell range.</param>
+            <param name="borderColor">Color of the cell border.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawOuterBorderLine(Syncfusion.Pdf.Graphics.PdfGraphics,Syncfusion.Pdf.Graphics.PdfPen,Syncfusion.XlsIO.ExcelBordersIndex,System.Single,System.Single,System.Single,System.Single,System.Int32,System.Int32,Syncfusion.XlsIO.IRange)">
+            <summary>
+            Draws the outer line.
+            </summary>
+            <param name="graphics">The pdf page graphics.</param>
+            <param name="pen">The pdf pen to draw the border.</param>
+            <param name="borderIndex">Index of the border .</param>
+            <param name="x1">The x1 point of the border line.</param>
+            <param name="y1">The y1 point of the border line.</param>
+            <param name="x2">The x2 point of the border line.</param>
+            <param name="y2">The y2 point of the border line.</param>
+            <param name="deltaX">The delta X.</param>
+            <param name="deltaY">The delta Y.</param>
+            <param name="cell">The cell range.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawInnerBorderLine(Syncfusion.Pdf.Graphics.PdfGraphics,Syncfusion.Pdf.Graphics.PdfPen,Syncfusion.XlsIO.IBorders,Syncfusion.XlsIO.ExcelBordersIndex,System.Single,System.Single,System.Single,System.Single,System.Int32,System.Int32,Syncfusion.XlsIO.IRange)">
+            <summary>
+            Draws the inner line.
+            </summary>
+            <param name="graphics">The pdf page graphics.</param>
+            <param name="pen">The pdf pen to draw the border.</param>
+            <param name="borders">The borders collection of the cell.</param>
+            <param name="borderIndex">Index of the border .</param>
+            <param name="x1">The x1 point of the border line.</param>
+            <param name="y1">The y1 point of the border line.</param>
+            <param name="x2">The x2 point of the border line.</param>
+            <param name="y2">The y2 point of the border line.</param>
+            <param name="deltaX">The delta X.</param>
+            <param name="deltaY">The delta Y.</param>
+            <param name="cell">The cell range.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawOrdinaryBorder(Syncfusion.XlsIO.IBorder,System.Single,System.Single,System.Single,System.Single,Syncfusion.Pdf.Graphics.PdfGraphics,System.Drawing.Color,Syncfusion.XlsIO.ExcelBordersIndex)">
+            <summary>
+            Draws the ordinary border.
+            </summary>
+            <param name="border">The Excel border index.</param>
+            <param name="x1">The x1 point of the border line.</param>
+            <param name="y1">The y1 point of the border line.</param>
+            <param name="x2">The x2 point of the border line.</param>
+            <param name="y2">The y2 point of the border line.</param>
+            <param name="graphics">The pdf page graphics.</param>
+            <param name="borderColor">Color of the border.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawImages(Syncfusion.XlsIO.Implementation.WorksheetImpl)">
+            <summary>
+            Draws the images.
+            </summary>
+            <param name="sheet">The sheet.</param>
+            <returns>Return the Pdf document with the image.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawImages(Syncfusion.XlsIO.Implementation.WorksheetImpl,Syncfusion.Pdf.Graphics.PdfGraphics,System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Single)">
+            <summary>
+            Draws all necessary images.
+            </summary>
+            <param name="sheet">Worksheet that is being converted into image.</param>
+            <param name="graphics">PdfGraphics to draw cells at.</param>
+            <param name="firstRow">One-based index of the first row to convert.</param>
+            <param name="firstColumn">One-based index of the first column to convert.</param>
+            <param name="lastRow">One-based index of the last row to convert.</param>
+            <param name="lastColumn">One-based index of the last column to convert.</param>
+            <param name="rowHeightGetter">Helper object to get row height faster.</param>
+            <param name="columnWidthGetter">Helper object to get column width faster.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DrawHeaderFooterImages(Syncfusion.XlsIO.IWorksheet,System.Single,Syncfusion.Pdf.Graphics.PdfTemplate,System.String,System.String,Syncfusion.Pdf.PdfSection,Syncfusion.XlsIO.Implementation.RichTextString,System.Int32@,System.Int32)">
+            <summary>
+            Draws the header and footer images.
+            </summary>
+            <param name="sheet">The worksheet object.</param>
+            <param name="sheetWidth">Width of the sheet.</param>
+            <param name="pageTemplate">The pdf page template.</param>
+            <param name="align">The alignment of the header and footer text.</param>
+            <param name="name">The name represents the header part or footer part.</param>
+            <param name="pdfSection">The PDF section.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.InitializePdfPage">
+            <summary>
+            Initializes the PDF page.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.IntializeHeaderFooter(Syncfusion.XlsIO.IWorksheet)">
+            <summary>
+            Intializes the header and footer.
+            </summary>
+            <param name="sheet">The sheet.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.IntializeFonts">
+            <summary>
+            Intializes the fonts.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.IntializeRemovableCharacters">
+            <summary>
+            Intializes the Remoable Characters
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetAdjacentCells(Syncfusion.XlsIO.IRange,System.Drawing.RectangleF,System.Int32,Syncfusion.XlsIO.Implementation.MigrantRangeImpl,System.Single)">
+            <summary>
+            Gets the adjacent cell size.
+            </summary>
+            <param name="cell">The cell rnage.</param>
+            <param name="rect">The cell rectangle.</param>
+            <param name="columnWidthGetter">The column width getter.</param>
+            <param name="firstColumn">The first column of the range.</param>
+            <param name="cell2">The adjacent cell.</param>
+            <param name="originalWidth">Width of the sheet.</param>
+            <returns>The Adjacent cell RectangleF</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetBackgroundHeightCoordinates(System.Single,System.Single,System.Single,System.Single,System.Collections.Generic.Dictionary{System.Drawing.PointF,System.Drawing.SizeF},Syncfusion.Pdf.PdfPage)">
+            <summary>
+            Gets the background height coordinates.
+            </summary>
+            <param name="startX">The start X.</param>
+            <param name="startY">The start Y.</param>
+            <param name="imageWidth">Width of the image.</param>
+            <param name="imageHeight">Height of the image.</param>
+            <param name="imageCoordinates">The image coordinates.</param>
+            <param name="pdfPage">The PDF page.</param>
+            <returns>
+            The collection coordinates and the sizes of Background height.
+            </returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetBackgroundWidthCoordinates(System.Single,System.Single,System.Single,System.Single,System.Collections.Generic.Dictionary{System.Drawing.PointF,System.Drawing.SizeF},Syncfusion.Pdf.PdfPage)">
+            <summary>
+            Gets the background width coordinates.
+            </summary>
+            <param name="startX">The start X.</param>
+            <param name="startY">The start Y.</param>
+            <param name="imageWidth">Width of the image.</param>
+            <param name="imageHeight">Height of the image.</param>
+            <param name="imageCoordinates">The image coordinates.</param>
+            <param name="pdfPage">The PDF page.</param>
+            <returns>
+            The collection coordinates and the sizes of Background image width .
+            </returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetBorderWidth(Syncfusion.XlsIO.IBorder)">
+            <summary>
+            Gets the width of the border.
+            </summary>
+            <param name="border">The border.</param>
+            <returns>The borderWidth of the Excel border Index.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetBottomText(System.String,System.Int32)">
+            <summary>
+            Gets the bottom text.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="rotationAngle">The rotation angle.</param>
+            <returns>The text to be displayed in the rotated Text.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetBrush(Syncfusion.XlsIO.Interfaces.IInternalExtendedFormat)">
+            <summary>
+            Gets the brush.
+            </summary>
+            <param name="internalExtendedFormat">The internal extended format of the cell.</param>
+            <returns>The PdfBrush object.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetCounterClockwiseRotation(System.Int32)">
+            <summary>
+            Gets the counter clockwise rotation.
+            </summary>
+            <param name="rotationAngle">The rotation angle.</param>
+            <returns>The rotation angle as an MS Excel representation.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetDashStyle(Syncfusion.XlsIO.IBorder)">
+            <summary>
+            Gets the dash style.
+            </summary>
+            <param name="border">The border.</param>
+            <returns>The PdfDashStyle value.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetDisplayText(Syncfusion.Pdf.Graphics.PdfFont,Syncfusion.Pdf.Graphics.PdfStringFormat,System.String,System.Drawing.RectangleF,Syncfusion.XlsIO.IRange,Syncfusion.Pdf.Graphics.PdfBrush,System.Boolean)">
+            <summary>
+            Gets the display text.
+            </summary>
+            <param name="font">The pdf font object.</param>
+            <param name="format">The pdf string format for the Excel cell display text.</param>
+            <param name="value">The cell display text.</param>
+            <param name="cellRect">The cell rectangle.</param>
+            <returns>
+            The actual text that need to be displayed in the Pdf page.
+            </returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetKeyowrds(System.String,System.Collections.ArrayList,System.Boolean)">
+            <summary>
+            Gets the keyowrds.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="arrayValues">The array values.</param>
+            <param name="isRTL">if set to <c>true</c> [is RTL].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.UpdateSplitText(System.Collections.Generic.Dictionary{System.Int32,System.String},System.String@,System.String@,System.String)">
+            <summary>
+            Updates the split text.
+            </summary>
+            <param name="keywords">The keywords.</param>
+            <param name="splitValue">The split value.</param>
+            <param name="text">The text.</param>
+            <param name="sourceString">The source string.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.CheckIndex(System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Checks the index.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="text">The text.</param>
+            <param name="splitValue">The split value.</param>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetDisplayWrapTextList(Syncfusion.Pdf.Graphics.PdfFont,Syncfusion.Pdf.Graphics.PdfStringFormat,System.String,System.Drawing.RectangleF)">
+            <summary>
+            Gets the display wrap text list.
+            </summary>
+            <param name="pdfFont">The PDF font.</param>
+            <param name="pdfFormat">The PDF string format.</param>
+            <param name="cellTextValue">The cell text value.</param>
+            <param name="cellRect">The cell rectangle.</param>
+            <returns>The list of wrapped text.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetDisplayWrapTextList(Syncfusion.Pdf.Graphics.PdfFont,Syncfusion.Pdf.Graphics.PdfStringFormat,System.String,System.Drawing.RectangleF,System.Collections.Generic.List{System.String})">
+            <summary>
+            Gets the display wrap text list.
+            </summary>
+            <param name="pdfFont">The PDF font.</param>
+            <param name="pdfFormat">The PDF string format.</param>
+            <param name="cellTextValue">The cell text value.</param>
+            <param name="cellRect">The cell rectangle.</param>
+            <param name="splitTextList">The split text list.</param>
+            <returns>The List of wrapped text.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetFont(Syncfusion.XlsIO.IFont,System.String,System.Int32)">
+            <summary>
+            Gets the font.
+            </summary>
+            <param name="font">The font object of the cell.</param>
+            <param name="fontName">Name of the font.</param>
+            <param name="size">The size of the font.</param>
+            <returns>Font object</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetFont(System.String,System.Int32,System.Boolean,System.Drawing.Font)">
+            <summary>
+            Gets the font.
+            </summary>
+            <param name="name">The name of the font.</param>
+            <param name="size">The size of the font.</param>
+            <returns>Font object</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetHeaderInformation(Syncfusion.XlsIO.IWorksheet,System.Collections.Generic.Dictionary{System.String,Syncfusion.ExcelToPdfConverter.HeaderFooterFontColorSettings},System.String,System.String,System.Single@,System.Single@,System.Single)">
+            <summary>
+            Gets the header information.
+            </summary>
+            <param name="sheet">The IWorksheet object.</param>
+            <param name="fontColorSettings">The font color settings.</param>
+            <param name="align">The alignment of the header and footer Text.</param>
+            <param name="name">The name represets either the header part or the footer part.</param>
+            <param name="height">The height of the Header or Footer.</param>
+            <param name="width">The width of the Header or Footer.</param>
+            <param name="pageWidth">Width of the page.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetHeaderFooterInformation(System.Collections.Generic.List{Syncfusion.ExcelToPdfConverter.HeaderFooter},Syncfusion.Pdf.PdfSection,Syncfusion.XlsIO.IWorksheet,System.Collections.Generic.Dictionary{System.String,Syncfusion.ExcelToPdfConverter.HeaderFooterFontColorSettings},Syncfusion.Pdf.Graphics.PdfTemplate,System.Single,System.Single,System.String,System.String,System.String,Syncfusion.ExcelToPdfConverter.HeaderFooterSection,System.Collections.Generic.Dictionary{System.String,Syncfusion.Pdf.Graphics.PdfTemplate})" -->
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetHeaderFooterColor(System.String)">
+            <summary>
+            Gets the color of the header footer text color.
+            </summary>
+            <param name="colorValue">The color value.</param>
+            <returns>The HeaderFooter Text color.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetHeaderFooterOptions(System.Collections.Generic.Dictionary{System.String,System.String},Syncfusion.Pdf.PdfSection,Syncfusion.XlsIO.IWorksheet,System.Single,System.String)">
+            <summary>
+            Gets the header footer options.
+            </summary>
+            <param name="pageSetups">The dictionart collection of the header and footer page setups.</param>
+            <param name="pdfSection">The PDF section.</param>
+            <param name="sheet">The worksheet object.</param>
+            <param name="templateWidth">Width of the template.</param>
+            <param name="name">The name represents either the header part or the footer part.</param>
+            <returns>
+            The collection of HeaderFooterSection objects.
+            </returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetHeaderFooterValues(System.String[],System.Int32,Syncfusion.ExcelToPdfConverter.HeaderFooterFontColorSettings)">
+            <summary>
+            Gets the header footer values.
+            </summary>
+            <param name="headerFooterValues">The header footer values.</param>
+            <param name="count">The count.</param>
+            <returns>The Object of the header and footerFontColor settings.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.CheckDigit(System.String)">
+            <summary>
+            Checks whether the string contains the digit or not.
+            </summary>
+            <param name="values">string values</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.CheckFontValues(System.String)">
+            <summary>
+            Checks whether the string contains the digit or not.
+            </summary>   
+            <param name="fontValue">font value</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetHorizontalAlignmentFromExtendedFormat(Syncfusion.XlsIO.IExtendedFormat,Syncfusion.XlsIO.IRange)">
+            <summary>
+            Gets the horizontal alignment from extended format.
+            </summary>
+            <param name="extendedFormatStyle">The extended format style.</param>
+            <param name="cell">The cell range.</param>
+            <returns>The PdfTextAlignment value.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetHorizontalLeft(System.Int32,System.Single,System.Drawing.RectangleF,Syncfusion.XlsIO.ExcelVAlign,System.Drawing.SizeF,Syncfusion.Pdf.Graphics.PdfFont,Syncfusion.Pdf.Graphics.PdfStringFormat)">
+            <summary>
+            Gets the horizontal left.
+            </summary>
+            <param name="rotationAngle">The rotation angle of the cell display text.</param>
+            <param name="stringLength">Length of the string.</param>
+            <param name="rect">The cell rectangle.</param>
+            <param name="verticalAlign">The vertical alignment of the cell text.</param>
+            <param name="firstCharSize">First char size of the display text .</param>
+            <param name="nativeFont">The native font of the cell text.</param>
+            <param name="format">The pdf string format.</param>
+            <returns>The vector for the text rotation.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetHorizontalRight(System.Int32,System.Single,System.Drawing.RectangleF,Syncfusion.XlsIO.ExcelVAlign,System.Drawing.SizeF,System.Drawing.SizeF,Syncfusion.Pdf.Graphics.PdfFont,Syncfusion.Pdf.Graphics.PdfStringFormat)">
+            <summary>
+            Gets the horizontal right.
+            </summary>
+            <param name="rotationAngle">The rotation angle of the cell display text.</param>
+            <param name="stringLength">Length of the string.</param>
+            <param name="rect">The cell rectangle.</param>
+            <param name="verticalAlign">The vertical alignment of the cell text.</param>
+            <param name="lastCharSize">Last char size of the display text.</param>
+            <param name="firstCharSize">First char size of the display text .</param>
+            <param name="nativeFont">The native font of the cell text.</param>
+            <param name="format">The pdf string format.</param>
+            <returns>The vector for the text rotation.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetHorizontalCenter(System.Int32,System.Single,System.Drawing.RectangleF,Syncfusion.XlsIO.ExcelVAlign,System.Drawing.SizeF,System.Drawing.SizeF,Syncfusion.Pdf.Graphics.PdfFont,Syncfusion.Pdf.Graphics.PdfStringFormat)">
+            <summary>
+            Gets the horizontal center.
+            </summary>
+            <param name="rotationAngle">The rotation angle of the cell display text.</param>
+            <param name="stringLength">Length of the string.</param>
+            <param name="rect">The cell rectangle.</param>
+            <param name="verticalAlign">The vertical alignment of the cell text.</param>
+            <param name="lastCharSize">Last char size of the display text.</param>
+            <param name="firstCharSize">First char size of the display text .</param>
+            <param name="nativeFont">The native font of the cell text.</param>
+            <param name="format">The pdf string format.</param>
+            <returns>The vector for the text rotation.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetMaxHeight(System.Collections.Generic.List{Syncfusion.ExcelToPdfConverter.HeaderFooterSection})">
+            <summary>
+            Gets the Max height of the HeaderFooterSection.
+            </summary>
+            <param name="sections">The sections.</param>
+            <returns>The Maximum value.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetMaxWidth(System.Collections.Generic.List{System.Drawing.SizeF})">
+            <summary>
+            Gets the width of the max.
+            </summary>
+            <param name="sizes">The sizes.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetMaxValue(System.Collections.Generic.List{System.Single})">
+            <summary>
+            Gets the max value.
+            </summary>
+            <param name="maxList">The max list.</param>
+            <returns>The maximum value</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetMaxValue(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Gets the max value.
+            </summary>
+            <param name="maxList">The max list.</param>
+            <returns>The maximum value.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetMergedRectangle(Syncfusion.XlsIO.Implementation.WorksheetImpl,Syncfusion.XlsIO.Parser.Biff_Records.MergeCellsRecord.MergedRegion,System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Single)">
+            <summary>
+            Gets the merged rectangle.
+            </summary>
+            <param name="sheet">The sheet.</param>
+            <param name="mergedRegion">The merged region.</param>
+            <param name="firstRow">The first row.</param>
+            <param name="firstColumn">The first column.</param>
+            <param name="rowHeightGetter">The row height getter.</param>
+            <param name="columnWidthGetter">The column width getter.</param>
+            <returns>The Merge Rectangle Coordinates.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetResizedImage(System.Drawing.Image,System.Int32,System.Int32)">
+            <summary>
+            Gets the resized image.
+            </summary>
+            <param name="originalImage">The original image.</param>
+            <param name="width">The width.</param>
+            <param name="height">The height.</param>
+            <returns>The resized Image.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetAdjacentRange(Syncfusion.XlsIO.IRange)">
+            <summary>
+            Gets the adjacent range.
+            </summary>
+            <param name="cell">The cell.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetScaledPage(System.Single,System.Single,System.Single,System.Single,System.Boolean)">
+            <summary>
+            Gets the scaled page.
+            </summary>
+            <param name="originalWidth">Width of the original.</param>
+            <param name="originalHeight">Height of the original.</param>
+            <param name="maxWidth">Width of the max.</param>
+            <param name="maxHeight">Height of the max.</param>
+            <param name="fitPage">if set to <c>true</c> [fit page].</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetScaledHFPage(System.Single,System.Single,System.Single,System.Single,System.Boolean)">
+            <summary>
+            Gets the scaled page.
+            </summary>
+            <param name="originalWidth">Width of the original.</param>
+            <param name="originalHeight">Height of the original.</param>
+            <param name="maxWidth">Width of the max.</param>
+            <param name="maxHeight">Height of the max.</param>
+            <param name="fitPage">if set to <c>true</c> [fit page].</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetScaledPicture(System.Drawing.Image,System.Int32,System.Int32)">
+            <summary>
+            Gets the scaled picture.
+            </summary>
+            <param name="originalImage">The original image.</param>
+            <param name="maxWidth">Width of the max.</param>
+            <param name="maxHeight">Height of the max.</param>
+            <returns>The scaled Image</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetSortedWidth(System.String,System.Collections.Generic.Dictionary{System.String,Syncfusion.Pdf.Graphics.PdfTemplate},System.Single)">
+            <summary>
+            Gets the width of the sorted.
+            </summary>
+            <param name="align">The align.</param>
+            <param name="temps">The temps.</param>
+            <param name="dividedWidth">Width of the divided.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetSplitted(System.String)">
+            <summary>
+            Gets the splitted header and footer text.
+            </summary>
+            <param name="pageSetup">The page setup.</param>
+            <returns>The Array of splitted strings</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetStartEndBorderIndex(Syncfusion.XlsIO.ExcelBordersIndex,Syncfusion.XlsIO.ExcelBordersIndex@,Syncfusion.XlsIO.ExcelBordersIndex@)">
+            <summary>
+            Gets the start index of the end border.
+            </summary>
+            <param name="borderIndex">Index of the Excel border.</param>
+            <param name="start">The start Excelborder index.</param>
+            <param name="end">The end Excel border index.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetTemplateHeight(Syncfusion.XlsIO.IPageSetup,System.String,System.String,System.Int32@,System.Int32@)">
+            <summary>
+            Gets the height of the template.
+            </summary>
+            <param name="pageSetup">The page setup object of the sheet.</param>
+            <param name="name">The name represents either the header part or the footer part.</param>
+            <param name="align">The alignent of the header and footer text.</param>
+            <param name="imageHeight">Height of the image.</param>
+            <param name="imageWidth">Width of the image.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetTextAlignmentFromShape(Syncfusion.XlsIO.ITextBoxShape)">
+            <summary>
+            Gets the text alignment from shape.
+            </summary>
+            <param name="shape">The shape.</param>
+            <returns>The PdfTextAlignment value.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetVector(System.Int32,System.Single,System.Drawing.RectangleF,Syncfusion.XlsIO.ExcelHAlign,Syncfusion.XlsIO.ExcelVAlign,System.Drawing.SizeF,System.Drawing.SizeF,Syncfusion.Pdf.Graphics.PdfFont,Syncfusion.Pdf.Graphics.PdfStringFormat)">
+            <summary>
+            Gets the vector.
+            </summary>
+            <param name="rotationAngle">The rotation angle of the cell display text.</param>
+            <param name="stringLength">Length of the string.</param>
+            <param name="rect">The cell rectangle.</param>
+            <param name="horizontalAlign">The horizontal alignment of the cell text.</param>
+            <param name="verticalAlign">The vertical alignment of the cell text.</param>
+            <param name="lastCharSize">Last char size of the display text.</param>
+            <param name="firstCharSize">First char size of the display text .</param>
+            <param name="nativeFont">The native font of the cell text.</param>
+            <param name="format">The pdf string format.</param>
+            <returns>The vector for the text rotation.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetVector(System.Int32,System.Single,System.Drawing.RectangleF,Syncfusion.XlsIO.Implementation.ExtendedFormatImpl,System.Drawing.SizeF,System.Drawing.SizeF,Syncfusion.Pdf.Graphics.PdfFont,Syncfusion.Pdf.Graphics.PdfStringFormat)">
+            <summary>
+            Gets the vector.
+            </summary>
+            <param name="rotationAngle">The rotation angle of the text within the cell.</param>
+            <param name="width">The total width of the display text.</param>
+            <param name="adjacentRect">The adjacent cell rect.</param>
+            <param name="extendedFormatImpl">The extended format impl of the cell.</param>
+            <param name="lastCharSize">Last char size of the display text. </param>
+            <param name="firstCharSize">First char size of the display text .</param>
+            <param name="nativeFont">The native font of the cell.</param>
+            <param name="format">The pdf string format.</param>
+            <returns>The vector for the text rotation</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetVerticalAlignmentFromExtendedFormat(Syncfusion.XlsIO.IExtendedFormat)">
+            <summary>
+            Gets the vertical alignment from extended format.
+            </summary>
+            <param name="style">The style.</param>
+            <returns>The PdfVerticalAlignment value</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetVerticalAlignmentFromShape(Syncfusion.XlsIO.ITextBoxShape)">
+            <summary>
+            Gets the vertical alignment from shape.
+            </summary>
+            <param name="textBoxShape">The text box shape.</param>
+            <returns>The pdfVerticalAlignment value</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.SetDocumentProperties">
+            <summary>
+            Sets the document properties.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.SetHyperLink(System.Drawing.RectangleF)">
+            <summary>
+            Sets the hyper link.
+            </summary>
+            <param name="cellRect">The cell rectangle.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.GetActualUsedRange(Syncfusion.XlsIO.IWorksheet)">
+            <summary>
+            Gets the actual used range.
+            </summary>
+            <param name="sheet">The sheet.</param>
+            <returns>The IRange object</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.AddBookMark">
+            <summary>
+            Adds the book mark.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.CheckRange(Syncfusion.XlsIO.IRange,Syncfusion.XlsIO.IRange)">
+            <summary>
+            Checks the range.
+            </summary>
+            <param name="tableRange">The table range.</param>
+            <param name="sheetRange">The sheet range.</param>
+            <returns>True if the sheet range is within the table range else false will be returned.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.CheckUnicode(System.String)">
+            <summary>
+            Checks the unicode.
+            </summary>
+            <param name="unicodeText">The unicode text.</param>
+            <returns>
+            True if the text is an unicode else false will returned.
+            </returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.CheckMergedRegion(Syncfusion.XlsIO.IRange)">
+            <summary>
+            Determines whether [has merged region] [the specified i range].
+            </summary>
+            <param name="iRange">The i range.</param>
+            <returns>
+            	<c>true</c> if [has merged region] [the specified i range]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.CheckIfRTL(System.UInt16[])">
+            <summary>
+            Checks if array of flags contains at least on RTL symbol.
+            </summary>
+            <param name="characterCodes">Array of flags.</param>
+            <returns>True if array of flags contains at least on RTL symbol, False otherwise.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.CreatePen(Syncfusion.XlsIO.IBorder,System.Drawing.Color)">
+            <summary>
+            Creates the pen.
+            </summary>
+            <param name="border">The border.</param>
+            <param name="borderColor">Color of the border.</param>
+            <returns>The PdfPen object.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.DegreeToRadian(System.Double)">
+            <summary>
+            Degrees to radian.
+            </summary>
+            <param name="angle">The angle.</param>
+            <returns>Radian value</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.NormalizeColor(System.Drawing.Color)">
+            <summary>
+            Normalizes the color.
+            </summary>
+            <param name="color">The color.</param>
+            <returns>The Normailzed Color</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.RequiredWidth(System.Single,System.Single,System.Single)">
+            <summary>
+            The function used to identify the required width or height.
+            </summary>
+            <param name="excelSheetWidth">Width of the excel sheet.</param>
+            <param name="sheetHeight">Height of the sheet.</param>
+            <param name="excelSheetHeight">Height of the excel sheet.</param>
+            <returns>Returns the required height or width</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.UpdateBorderDelta(Syncfusion.XlsIO.IWorksheet,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32@,System.Int32@,System.Boolean,Syncfusion.XlsIO.IBorders,Syncfusion.XlsIO.ExcelBordersIndex,Syncfusion.XlsIO.ExcelBordersIndex,System.Boolean)">
+            <summary>
+            Updates the border delta.
+            </summary>
+            <param name="sheet">The sheet.</param>
+            <param name="row">The row of the excel sheet.</param>
+            <param name="column">The column of the excel sheet.</param>
+            <param name="deltaX">The delta X.</param>
+            <param name="deltaY">The delta Y.</param>
+            <param name="deltaX1">The delta x1.</param>
+            <param name="deltaY1">The delta y1.</param>
+            <param name="isInvertCondition">if set to <c>true</c> [is invert condition].</param>
+            <param name="borders">The borders collection of the cell.</param>
+            <param name="start">The start Excel border index.</param>
+            <param name="end">The end Excel border index.</param>
+            <param name="isLineStart">if set to <c>true</c> [is line start].</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.UpdateRectangleCoordinates(System.Drawing.RectangleF,Syncfusion.XlsIO.IBorders)">
+            <summary>
+            Updates the rectangle coordinates.
+            </summary>
+            <param name="cellRect">The cell rectangle.</param>
+            <param name="borders">The borders collection of the cell.</param>
+            <returns>The updated Rectangle coordinates</returns>
+        </member>
+        <member name="E:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.CurrentProgressChanged">
+            <summary>
+            Occurs when [current progress changed].
+            </summary>
+        </member>
+        <member name="E:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.SheetBeforeDrawn">
+            <summary>
+            Occurs when [sheet before drawn].
+            </summary>
+        </member>
+        <member name="E:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.SheetAfterDrawn">
+            <summary>
+            Occurs when [sheet after drawn].
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.IsPrintTitleRowPage">
+            <summary>
+            Gets a value indicating whether this instance is print title row page.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is print title row page; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.IsPrintTitleColumnPage">
+            <summary>
+            Gets a value indicating whether this instance is print title column page.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is print title column page; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.RowHeightGetter">
+            <summary>
+            Gets the row height getter.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.ColumnWidthGetter">
+            <summary>
+            Gets the column width getter.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.MergeMethod">
+            <summary>
+            Delegate for Merged cell rendering.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverter.CellMethod">
+            <summary>
+            Delegate for background cell rendering.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings">
+            <summary>
+            This Class represents the Document Settings for the Excel to Pdf Converter 
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings.pdfDocument">
+            <summary>
+            Represents the Pdf document object.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings.displayGridLines">
+            <summary>
+            Represents the display style of the gridlines in the output document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings.layoutOptions">
+            <summary>
+            Represents the layout mode of the output sheet.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings.embedFonts">
+            <summary>
+            Indicates whether to embed the fonts to the output pdf document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings.exportBookmarks">
+            <summary>
+            Indicates whether to export the bookmarks to the output pdf document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings.exportDocumentProperties">
+            <summary>
+            Indicates whether to export the document properties to the output pdf document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings.enableRTL">
+            <summary>
+            Indicates whether the output pdf sheet should be rendered from right to left.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings.m_HFOption">
+            <summary>
+            Represents the Header footer option of the output document.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings.GetExcelSheetSize(Syncfusion.XlsIO.ExcelPaperSize)">
+            <summary>
+            Gets the size of the excel sheet.
+            </summary>
+            <param name="paperSize">Size of the paper.</param>
+            <returns>The Size of the output pdf page.</returns>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings.TemplateDocument">
+            <summary>
+            Gets or sets the template document.
+            </summary>
+            <value>The template document.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings.DisplayGridLines">
+            <summary>
+            Gets or sets the display grid lines.
+            </summary>
+            <value>The display grid lines.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings.EmbedFonts">
+            <summary>
+            Gets or sets a value indicating whether [embed fonts].
+            </summary>
+            <value><c>true</c> if [embed fonts]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings.ExportBookmarks">
+            <summary>
+            Gets or sets a value indicating whether [export bookmarks].
+            </summary>
+            <value><c>true</c> if [export bookmarks]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings.ExportDocumentProperties">
+            <summary>
+            Gets or sets a value indicating whether [export document properties].
+            </summary>
+            <value>
+            <c>true</c> if [export document properties]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings.HeaderFooterOption">
+            <summary>
+            Returns the Header footer Option.
+            </summary>    
+            <value>The HeaderFooterOption object</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings.LayoutOptions">
+            <summary>
+            Gets or sets the layout mode.
+            </summary>
+            <value>The layout mode.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.ExcelToPdfConverterSettings.EnableRTL">
+            <summary>
+            Gets or sets a value indicating whether [enable RTL].
+            </summary>
+            <value><c>true</c> if [enable RTL]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Syncfusion.ExcelToPdfConverter.HeaderFooter">
+            <summary>
+            The class has the functions and properties to manipulate the Header and footers of the output page.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.HeaderFooter.templateSize">
+            <summary>
+            Indicates the template size of the HeaderFooter.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.HeaderFooter.headerFooterName">
+            <summary>
+            Indicates the name of the HeaderFooter.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.HeaderFooter.headerFooterSections">
+            <summary>
+            Indicates the HeaderFooter Section collections.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.HeaderFooter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="!:HF"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.HeaderFooter.TemplateSize">
+            <summary>
+            Gets or sets the size of the template.
+            </summary>
+            <value>The size of the template.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.HeaderFooter.HeaderFooterName">
+            <summary>
+            Gets or sets the name of the header footer.
+            </summary>
+            <value>The name of the header footer.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.HeaderFooter.HeaderFooterSections">
+            <summary>
+            Gets or sets the header footer sections.
+            </summary>
+            <value>The header footer sections.</value>
+        </member>
+        <member name="T:Syncfusion.ExcelToPdfConverter.HeaderFooterSection">
+            <summary>
+            The class has the properties to hold the header and footer section settings.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.HeaderFooterSection.headerFooterWidth">
+            <summary>
+            Represents the width of the HF section.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.HeaderFooterSection.headerFooterHeight">
+            <summary>
+            Represents the height of the HF Section.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.HeaderFooterSection.headerFooterSectionName">
+            <summary>
+            Represents the HF Section name.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.HeaderFooterSection.m_rtf">
+            <summary>
+            Represents the collection of Richtext string.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.HeaderFooterSection.headerFooterCollections">
+            <summary>
+            Represents the collection of the HF.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.HeaderFooterSection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.ExcelToPdfConverter.HeaderFooterSection"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.HeaderFooterSection.Width">
+            <summary>
+            Gets or sets the width.
+            </summary>
+            <value>The width.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.HeaderFooterSection.Height">
+            <summary>
+            Gets or sets the height.
+            </summary>
+            <value>The height.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.HeaderFooterSection.SectionName">
+            <summary>
+            Gets or sets the name of the section.
+            </summary>
+            <value>The name of the section.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.HeaderFooterSection.HeaderFooterCollections">
+            <summary>
+            Gets or sets the header footer collections.
+            </summary>
+            <value>The header footer collections.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.HeaderFooterSection.RTF">
+            <summary>
+            Gets or sets the RTF.
+            </summary>
+            <value>The RTF.</value>
+        </member>
+        <member name="T:Syncfusion.ExcelToPdfConverter.HeaderFooterFontColorSettings">
+            <summary>
+            The class has the properties and functions for the HF color and font settings.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.HeaderFooterFontColorSettings.font">
+            <summary>
+            Represents the font of the header and footer text.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.HeaderFooterFontColorSettings.fontColor">
+            <summary>
+            Represents the font color of the header and footer text.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.HeaderFooterFontColorSettings.hasUnderline">
+            <summary>
+            Represents the Underline for the header and footer text.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.HeaderFooterFontColorSettings.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.ExcelToPdfConverter.HeaderFooterFontColorSettings"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.HeaderFooterFontColorSettings.Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>
+            A new object that is a copy of this instance.
+            </returns>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.HeaderFooterFontColorSettings.Font">
+            <summary>
+            Gets or sets the font.
+            </summary>
+            <value>The font of the header and footer text.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.HeaderFooterFontColorSettings.HasUnderline">
+            <summary>
+            Gets or sets a value indicating whether this instance has underline.
+            </summary>
+            <value>
+            	<c>true</c> if this instance has underline; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.HeaderFooterFontColorSettings.FontColor">
+            <summary>
+            Gets or sets the color of the font.
+            </summary>
+            <value>The color of the font.</value>
+        </member>
+        <member name="T:Syncfusion.ExcelToPdfConverter.HeaderFooterOption">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.HeaderFooterOption.m_showHeader">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.HeaderFooterOption.m_showFooter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.HeaderFooterOption.ShowHeader">
+            <summary>
+            Gets or sets a value indicating whether [show header].
+            </summary>
+            <value><c>true</c> if [show header]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.HeaderFooterOption.ShowFooter">
+            <summary>
+            Gets or sets a value indicating whether [show footer].
+            </summary>
+            <value><c>true</c> if [show footer]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Syncfusion.ExcelToPdfConverter.PageSetupOption">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.PageSetupOption.#ctor(Syncfusion.XlsIO.Implementation.WorksheetImpl,Syncfusion.XlsIO.IRange)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.ExcelToPdfConverter.PageSetupOption"/> class.
+            </summary>
+            <param name="sheet">The sheet.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.PageSetupOption.ParseTitleRows">
+            <summary>
+            Parses the title rows.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.PageSetupOption.ParseTitleColumns">
+            <summary>
+            Parses the title columns.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.PageSetupOption.ParsePrintArea">
+            <summary>
+            Parses the print area.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.PageSetupOption.GetSplittedTitle(System.String)">
+            <summary>
+            Gets the splitted title.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.PageSetupOption.GetSplittedPrintArea(System.String)">
+            <summary>
+            Gets the splitted print area.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.PageSetupOption.GetRowHeight(Syncfusion.Pdf.Graphics.PdfUnitConvertor,Syncfusion.XlsIO.Implementation.ItemSizeHelper)">
+            <summary>
+            Gets the height of the row.
+            </summary>
+            <param name="converter">The converter.</param>
+            <param name="rowHeightGetter">The row height getter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.PageSetupOption.GetColumnWidth(Syncfusion.Pdf.Graphics.PdfUnitConvertor,Syncfusion.XlsIO.Implementation.ItemSizeHelper)">
+            <summary>
+            Gets the width of the column.
+            </summary>
+            <param name="converter">The converter.</param>
+            <param name="columnWidthGetter">The column width getter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.PageSetupOption.UpdateRange(System.String)">
+            <summary>
+            Updates the range.
+            </summary>
+            <param name="split">The split.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.PageSetupOption.CheckRowBounds(System.Int32,System.Int32)">
+            <summary>
+            Checks the row bounds.
+            </summary>
+            <param name="startIndex">The start index.</param>
+            <param name="endIndex">The end index.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.PageSetupOption.CheckColumnBounds(System.Int32,System.Int32)">
+            <summary>
+            Checks the column bounds.
+            </summary>
+            <param name="startIndex">The start index.</param>
+            <param name="endIndex">The end index.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.PageSetupOption.GetBreakRanges(Syncfusion.ExcelToPdfConverter.LayoutOptions,Syncfusion.XlsIO.IRange[])">
+            <summary>
+            Gets the break ranges.
+            </summary>
+            <param name="option">The option.</param>
+            <param name="actualUsedRange">The actual used range.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.PageSetupOption.GetHorizontalBreaks(System.Collections.Generic.List{Syncfusion.XlsIO.IRange},System.Int32)">
+            <summary>
+            Gets the horizontal breaks.
+            </summary>
+            <param name="ranges">The ranges.</param>
+            <param name="finalLastRow">The final last row.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.PageSetupOption.GetVerticalBreaks(System.Collections.Generic.List{Syncfusion.XlsIO.IRange},System.Int32)">
+            <summary>
+            Gets the vertical breaks.
+            </summary>
+            <param name="veriRange">The veri range.</param>
+            <param name="finalColumn">The final column.</param>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.PageSetupOption.PrintTitleFirstRow">
+            <summary>
+            Gets the print title first row.
+            </summary>
+            <value>The print title first row.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.PageSetupOption.PrintTitleFirstColumn">
+            <summary>
+            Gets the print title first column.
+            </summary>
+            <value>The print title first column.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.PageSetupOption.PrintTitleLastRow">
+            <summary>
+            Gets the print title last row.
+            </summary>
+            <value>The print title last row.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.PageSetupOption.PrintTitleLastColumn">
+            <summary>
+            Gets the print title last column.
+            </summary>
+            <value>The print title last column.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.PageSetupOption.HasPrintTitleRows">
+            <summary>
+            Gets a value indicating whether this instance has print title rows.
+            </summary>
+            <value>
+            	<c>true</c> if this instance has print title rows; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.PageSetupOption.HasPrintTitleColumns">
+            <summary>
+            Gets a value indicating whether this instance has print title columns.
+            </summary>
+            <value>
+            	<c>true</c> if this instance has print title columns; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.PageSetupOption.HasPrintArea">
+            <summary>
+            Gets a value indicating whether this instance has print area.
+            </summary>
+            <value>
+            	<c>true</c> if this instance has print area; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.PageSetupOption.TitleRowHeight">
+            <summary>
+            Gets the height of the title row.
+            </summary>
+            <value>The height of the title row.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.PageSetupOption.TitleColumnWidth">
+            <summary>
+            Gets the width of the title column.
+            </summary>
+            <value>The width of the title column.</value>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.PageSetupOption.RowIndexes">
+            <summary>
+            Gets the row indexes.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.PageSetupOption.ColumnIndexes">
+            <summary>
+            Gets the column indexes.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelToPdfConverter.PageSetupOption.PrintAreas">
+            <summary>
+            Gets the print areas.
+            </summary>
+            <value>The print areas.</value>
+        </member>
+        <member name="T:Syncfusion.ExcelToPdfConverter.GridLinesDisplayStyle">
+            <summary>
+            Enumeration represents the Displaystyle of the Gridlines
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.GridLinesDisplayStyle.Auto">
+            <summary>
+            Represents the automatic gridline visibility.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.GridLinesDisplayStyle.Visible">
+            <summary>
+            Represents that the gridline should be rendered in the output page.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.GridLinesDisplayStyle.Invisible">
+            <summary>
+            Represents that the gridline should not be rendered in the output page.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelToPdfConverter.LayoutOptions">
+            <summary>
+            Enumeration represents the Layout of the Output Document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.LayoutOptions.FitSheetOnOnePage">
+            <summary>
+            Represents the FitSheetOnOnePage option of Excel pagesetup.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.LayoutOptions.NoScaling">
+            <summary>
+            Represents the NoScaling option of Excel pagesetup.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.LayoutOptions.FitAllColumnsOnOnePage">
+            <summary>
+            Represents the FitAllColumnsOnOnePage option of Excel pagesetup.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.LayoutOptions.FitAllRowsOnOnePage">
+            <summary>
+            Represents the FitAllRowsOnOnePage option of Excel pagesetup.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.LayoutOptions.CustomScaling">
+            <summary>
+            Represents the Custom Scaling option of Excel pagesetup.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.LayoutOptions.Automatic">
+            <summary>
+            Represents the Automatic Layout Option.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelToPdfConverter.TableStyleRenderer">
+            <summary>
+            Class used for Table style rendering in the pdf page.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.listObjects">
+            <summary>
+            Sheet List objects.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.builtInStyle">
+            <summary>
+            List object built in style.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.colorFonts">
+            <summary>
+            Collection of font colors of listobjects.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.borderList">
+            <summary>
+            Collection of built in styles bordercolors.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.doubleBorderList">
+            <summary>
+            Collection of double border built in styles.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.topSolidList">
+            <summary>
+            Collection of built in styles that has top border as solid.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.borderColorList">
+            <summary>
+            Collection of List object ranges and their respective borders and bordercolors.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.fontColorCollections">
+            <summary>
+            Collection of list object ranges and their font colors.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.darkStyles">
+            <summary>
+            Collection of Dark built in styles for the Last and first column.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.mediumStyleWithBorder">
+            <summary>
+            Collection of Medium built in Styles for the Last and first column that has border settings.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.mediumStyleWithoutBorder">
+            <summary>
+            Collection of Medium built in Styles for the Last and first column that has no border settings.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.lightStyleBorder">
+            <summary>
+            Collection of Light buit in Styles for the Row and column stripes.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.mediumStyleBorder">
+            <summary>
+            Collection of Medium styles for the column stripes.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.headerColor">
+            <summary>
+            List Object Header color 
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.firstColumn">
+            <summary>
+            Indicates whether First Column is shown.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.lastColumn">
+            <summary>
+            Indicates whether Last Column is shown.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.headerRow">
+            <summary>
+            Indicates whether Header Row is shown.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.rowStripes">
+            <summary>
+            Indicates whether the Row stripes are shown.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.columnStripes">
+            <summary>
+            Indicates whether the Column Stripes are shown.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.ExcelToPdfConverter.TableStyleRenderer"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.#ctor(Syncfusion.XlsIO.IListObjects)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.ExcelToPdfConverter.TableStyleRenderer"/> class.
+            </summary>
+            <param name="book">The IWorkbook object.</param>
+            <param name="sheetListObjects">The sheet list objects.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.ApplyStyles(Syncfusion.XlsIO.IWorksheet,System.Collections.Generic.Dictionary{Syncfusion.XlsIO.IRange,System.Drawing.Color}@)">
+            <summary>
+            Applies the styles.
+            </summary>
+            <param name="sheet">The sheet.</param>
+            <param name="fontColorCollection">The font color collection.</param>
+            <returns>Range collection with the borders and their respective colors</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.InitializeLightStyle">
+            <summary>
+            Initializes the light style.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.InitializeBorders">
+            <summary>
+            Initializes the borders.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.InitializeColorFonts">
+            <summary>
+            Initializes the color fonts.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.InitializeDoubleBorders">
+            <summary>
+            Initializes the double borders.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.InitializeTopSolid">
+            <summary>
+            Initializes the top solid.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.InitializeColumnSettings">
+            <summary>
+            Initializes the column settings.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.InitializeMediumStyle">
+            <summary>
+            Initializes the medium style.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.DrawLocationAndStyle(Syncfusion.XlsIO.IWorksheet,Syncfusion.XlsIO.TableBuiltInStyles,Syncfusion.XlsIO.IRange,System.Boolean)">
+            <summary>
+            Draws the table style.
+            </summary>
+            <param name="sheet">The worksheet.</param>
+            <param name="listObjectBuiltInStyle">The built in style.</param>
+            <param name="objectLocation">The list object location.</param>
+            <param name="showTotals">if set to <c>true</c> [show totals].</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.TotalStyle(Syncfusion.XlsIO.IWorksheet,Syncfusion.XlsIO.IRange,Syncfusion.ExcelToPdfConverter.TableStyleRenderer.BorderStyle,System.Drawing.Color,System.Boolean,System.Drawing.Color,Syncfusion.ExcelToPdfConverter.TableStyleRenderer.SolidStyle,System.Boolean,System.Drawing.Color,System.Boolean)">
+            <summary>
+            Renders the style to the total part of the table.
+            </summary>
+            <param name="sheet">The worksheet.</param>
+            <param name="objectLocation">The listobject location.</param>
+            <param name="borderStyle">The border style.</param>
+            <param name="borderColor">Color of the border.</param>
+            <param name="entireRow">if set to <c>true</c> [entire row].</param>
+            <param name="backgroundColor">Color of the background.</param>
+            <param name="solidStyle">The solid style.</param>
+            <param name="showTotals">if set to <c>true</c> [show totals].</param>
+            <param name="fontColor">Color of the font.</param>
+            <param name="boldFont">if set to <c>true</c> [bold font].</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.HeaderStyle(Syncfusion.XlsIO.IWorksheet,System.String,Syncfusion.ExcelToPdfConverter.TableStyleRenderer.BorderStyle,System.Drawing.Color,System.Boolean,System.Drawing.Color,Syncfusion.ExcelToPdfConverter.TableStyleRenderer.SolidStyle,System.Drawing.Color)">
+            <summary>
+            Renders the style to the header part of the table.
+            </summary>
+            <param name="sheet">The Worksheet.</param>
+            <param name="headerRange">The header range.</param>
+            <param name="headerBorderStyle">The header border style.</param>
+            <param name="borderColor">Color of the border.</param>
+            <param name="entireRow">if set to <c>true</c> [entire row].</param>
+            <param name="backgroundColor">Color of the background.</param>
+            <param name="solidLineStyle">The solid line style.</param>
+            <param name="fontColor">Color of the font.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.ContentStyle(Syncfusion.XlsIO.IWorksheet,Syncfusion.XlsIO.IRange,Syncfusion.ExcelToPdfConverter.TableStyleRenderer.BorderStyle,System.Drawing.Color,System.Boolean,System.Drawing.Color,System.Drawing.Color,Syncfusion.ExcelToPdfConverter.TableStyleRenderer.SolidStyle,System.Drawing.Color,System.Boolean)">
+            <summary>
+            Renders the style to the content part of the table.
+            </summary>
+            <param name="sheet">The Worksheet.</param>
+            <param name="headerRange">The header range.</param>
+            <param name="contentBorderStyle">The content border style.</param>
+            <param name="borderColor">Color of the border.</param>
+            <param name="entireRow">if set to <c>true</c> [entire row].</param>
+            <param name="backgroundFirstColor">First color of the Background.</param>
+            <param name="backgroundSecondColor">Second color of the Background.</param>
+            <param name="solidLineStyle">The solid line style.</param>
+            <param name="fontColor">Color of the font.</param>
+            <param name="showTotals">if set to <c>true</c> [show totals].</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.ApplyBorder(Syncfusion.XlsIO.IWorksheet,Syncfusion.XlsIO.IRange,Syncfusion.ExcelToPdfConverter.TableStyleRenderer.SolidStyle,Syncfusion.ExcelToPdfConverter.TableStyleRenderer.BorderStyle,System.Drawing.Color,System.Boolean)">
+            <summary>
+            Applies the border.
+            </summary>
+            <param name="sheet">The Worksheet.</param>
+            <param name="borderRange">The border range.</param>
+            <param name="solidStyle">The solid style.</param>
+            <param name="borderStyle">The border style.</param>
+            <param name="borderColor">Color of the border.</param>
+            <param name="entireRow">if set to <c>true</c> [entire row].</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.ApplyFirstLastColumnBorder(Syncfusion.XlsIO.IWorksheet,Syncfusion.XlsIO.IRange,Syncfusion.ExcelToPdfConverter.TableStyleRenderer.SolidStyle,Syncfusion.ExcelToPdfConverter.TableStyleRenderer.BorderStyle,System.Drawing.Color,System.Boolean)">
+            <summary>
+            Applies the border to the first and last column of the table.
+            </summary>
+            <param name="sheet">The Worksheet.</param>
+            <param name="borderRange">The border range.</param>
+            <param name="solidStyle">The solid style.</param>
+            <param name="borderStyle">The border style.</param>
+            <param name="borderColor">Color of the border.</param>
+            <param name="entireRow">if set to <c>true</c> [entire row].</param>
+            <param name="showTotal">if set to <c>true</c> [show total].</param>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.ApplyFirstLastColumnStyle(Syncfusion.XlsIO.IWorksheet,Syncfusion.XlsIO.IRange,System.Drawing.Color,System.Drawing.Color,System.Boolean)">
+            <summary>
+            Applies the first and last column style.
+            </summary>
+            <param name="sheet">The Worksheet.</param>
+            <param name="contentRange">The content range.</param>
+            <param name="fontColor">Color of the font.</param>
+            <param name="backgroundFirstColor">First color of the bg.</param>
+            <param name="showTotals">if set to <c>true</c> [show totals].</param>
+            <returns>IRange Object</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.CheckStyle">
+            <summary>
+            Checks the style.
+            </summary> 
+            <returns>
+            Returns true if the built in style is within the this.lastColumn and first column list else false will be returned.
+            </returns>
+        </member>
+        <member name="T:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.SolidStyle">
+            <summary>
+            Enumeration of the Solid style in Borders
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.SolidStyle.None">
+            <summary>
+            Represents the No Solidstyle.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.SolidStyle.Top">
+            <summary>
+            Represents the solid style for the Top ExcelBorderIndex.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.SolidStyle.Bottom">
+            <summary>
+            Represents the solid style for the Bottom ExcelBorderIndex.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.SolidStyle.Right">
+            <summary>
+            Represents the solid style for the Right ExcelBorderIndex.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.SolidStyle.Left">
+            <summary>
+            Represents the solid style for the Left ExcelBorderIndex.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.SolidStyle.TopBottom">
+            <summary>
+            Represents the solid style for both Top and Bottom ExcelBorderIndex.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.SolidStyle.LeftRight">
+            <summary>
+            Represents the solid style for both Right and Left ExcelBorderIndex.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.BorderStyle">
+            <summary>
+            Enumeration of the Border Styles.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.BorderStyle.None">
+            <summary>
+            Represents that no ExcelBorderIndex is set.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.BorderStyle.Top">
+            <summary>
+            Represents that Top ExcelBorderIndex is set.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.BorderStyle.Bottom">
+            <summary>
+            Represents that Bottom ExcelBorderIndex is set.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.BorderStyle.Left">
+            <summary>
+            Represents that Left ExcelBorderIndex is set.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.BorderStyle.Right">
+            <summary>
+            Represents that Right ExcelBorderIndex is set.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.BorderStyle.TopBottom">
+            <summary>
+            Represents that both Top and Bottom ExcelBorderIndex is set.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.BorderStyle.LeftRight">
+            <summary>
+            Represents that both Left and Right ExcelBorderIndex is set.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelToPdfConverter.TableStyleRenderer.BorderStyle.All">
+            <summary>
+            Represents that all ExcelBorderIndex is set.
+            </summary>
+        </member>
+    </members>
+</doc>

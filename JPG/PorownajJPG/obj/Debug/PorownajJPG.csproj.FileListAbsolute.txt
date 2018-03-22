@@ -1,0 +1,5 @@
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\PorownajJPG\bin\Debug\PorownajJPG.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\PorownajJPG\bin\Debug\PorownajJPG.pdb
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\PorownajJPG\obj\Debug\PorownajJPG.csprojResolveAssemblyReference.cache
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\PorownajJPG\obj\Debug\PorownajJPG.dll
+C:\Users\VOLTPC3\Documents\Visual Studio 2015\Projects\JPG\PorownajJPG\obj\Debug\PorownajJPG.pdb
