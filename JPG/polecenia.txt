@@ -8,3 +8,12 @@ pobierz http://test.odpn.pl/ODPN/Szkoly/WydrukObliczonychDotacji/WydrukObliczony
 pobierz http://test.odpn.pl/ODPN/Szkoly/WydrukObliczonychDotacji/WydrukObliczonychDotacji_Resp.aspx?volt_sp_key=fa917590e839db3c508112e09e985893&task=PobierzWydruk&szk_id=1145&rok=2017&miesiac=7
 pobierz http://test.odpn.pl/ODPN/Szkoly/WydrukObliczonychDotacji/WydrukObliczonychDotacji_Resp.aspx?volt_sp_key=fa917590e839db3c508112e09e985893&task=PobierzWydruk&szk_id=1145&rok=2017&miesiac=7
 zakoncz
+1
+2
+3
+43
+54
+56
+
+657
+658
